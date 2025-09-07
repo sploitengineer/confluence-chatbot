@@ -1,0 +1,9 @@
+fastapi 
+uvicorn 
+"pydantic[email]" 
+atlassian-python-api 
+chromadb 
+sentence-transformers 
+langchain-community 
+langchain
+beautifulsoup4
