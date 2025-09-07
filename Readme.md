@@ -42,15 +42,15 @@ graph TD
         direction TB
         subgraph Ingestion_Flow [Ingestion Flow]
             direction TB
-            B --> D[Fetch & Parse Pages (Step 1)];
-            D --> E[Chunk, Embed & Store (Step 2)];
+            B --> D[Step 1 - Fetch & Parse Pages];
+            D --> E[Step 2 - Chunk, Embed & Store];
         end
         
         subgraph Chat_Flow [Chat Flow]
             direction TB
-            G --> J[Retrieve Relevant Chunks (Step 1)];
-            J --> K[Augment Prompt with Chunks (Step 2)];
-            K --> L[Generate Answer (Step 3)];
+            G --> J[Step 1 - Retrieve Relevant Chunks];
+            J --> K[Step 2 - Augment Prompt with Chunks];
+            K --> L[Step 3 - Generate Answer];
         end
         L --> I;
     end
@@ -59,7 +59,7 @@ graph TD
     subgraph External_Services [External Services]
         direction TB
         Confluence[Confluence Cloud API]:::serviceStyle
-        Ollama[Ollama (llama3:8b)]:::serviceStyle
+        Ollama[Ollama llama3:8b]:::serviceStyle
     end
 
     %% Connections between subgraphs
@@ -72,6 +72,7 @@ graph TD
     class A,F,H frontendStyle;
     class D,E,J,K,L backendStyle;
     class I frontendStyle;
+
 
 🛠️ Technology Stack
 Area
