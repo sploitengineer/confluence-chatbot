@@ -16,6 +16,7 @@ The entire system runs **100% locally**, using **Ollama** for the Language Model
 
 ---
 
+
 ## 🛠️ Technology Stack
 
 | Area     | Technologies                                                                 |
@@ -37,15 +38,11 @@ Follow these steps to get the project running on your local machine.
   ```bash
   ollama pull llama3:8b
 
-
-
 ---
 
 ## ⚙️ Architecture & Data Flow
 
 The application follows a standard RAG pattern. The **Ingestion** process is a one-time setup per Confluence space, which powers the **Chat** flow.
-
-
 
 ```mermaid
 graph TD
