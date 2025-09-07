@@ -25,7 +25,7 @@ graph TD
     classDef userActionStyle fill:#FEF9E7,stroke:#F1C40F,stroke-width:2px,color:#B7950B
 
     %% Frontend Subgraph
-    subgraph Frontend (React UI)
+    subgraph Frontend [React UI]
         direction LR
         A[User Enters Credentials & Space Key]:::userActionStyle
         F[User Types Question]:::userActionStyle
@@ -38,25 +38,25 @@ graph TD
     end
 
     %% Backend Subgraph
-    subgraph Backend (FastAPI Server)
+    subgraph Backend [FastAPI Server]
         direction TB
-        subgraph Ingestion Flow
+        subgraph Ingestion_Flow [Ingestion Flow]
             direction TB
-            B --> D[1. Fetch & Parse Pages];
-            D --> E[2. Chunk, Embed & Store];
+            B --> D[Fetch & Parse Pages (Step 1)];
+            D --> E[Chunk, Embed & Store (Step 2)];
         end
         
-        subgraph Chat Flow
+        subgraph Chat_Flow [Chat Flow]
             direction TB
-            G --> J[1. Retrieve Relevant Chunks];
-            J --> K[2. Augment Prompt with Chunks];
-            K --> L[3. Generate Answer];
+            G --> J[Retrieve Relevant Chunks (Step 1)];
+            J --> K[Augment Prompt with Chunks (Step 2)];
+            K --> L[Generate Answer (Step 3)];
         end
         L --> I;
     end
 
     %% External Services Subgraph
-    subgraph External Services
+    subgraph External_Services [External Services]
         direction TB
         Confluence[Confluence Cloud API]:::serviceStyle
         Ollama[Ollama (llama3:8b)]:::serviceStyle
