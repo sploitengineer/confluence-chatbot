@@ -16,9 +16,36 @@ The entire system runs **100% locally**, using **Ollama** for the Language Model
 
 ---
 
+## 🛠️ Technology Stack
+
+| Area     | Technologies                                                                 |
+|----------|------------------------------------------------------------------------------|
+| Backend  | Python, FastAPI, LangChain, Ollama, ChromaDB, atlassian-python-api            |
+| Frontend | React (Vite), Tailwind CSS, lucide-react, react-markdown                      |
+| LLM      | Ollama (specifically tested with **llama3:8b**)                               |
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to get the project running on your local machine.
+
+### 1. Prerequisites
+- **Ollama**: Make sure you have Ollama installed and running.  
+- **Python & Node.js**: Python (3.9+) and Node.js (18+).  
+- **Pull the LLM**:  
+  ```bash
+  ollama pull llama3:8b
+
+
+
+---
+
 ## ⚙️ Architecture & Data Flow
 
 The application follows a standard RAG pattern. The **Ingestion** process is a one-time setup per Confluence space, which powers the **Chat** flow.
+
+
 
 ```mermaid
 graph TD
@@ -70,62 +97,3 @@ graph TD
     class A,F,H frontendStyle;
     class D,E,J,K,L backendStyle;
     class I frontendStyle;
-'''
-🛠️ Technology Stack
-Area
-
-Technologies
-
-Backend
-
-Python, FastAPI, LangChain, Ollama, ChromaDB, atlassian-python-api
-
-Frontend
-
-React (Vite), Tailwind CSS, lucide-react, react-markdown
-
-LLM
-
-Ollama (specifically tested with llama3:8b)
-
-🚀 Getting Started
-Follow these steps to get the project running on your local machine.
-
-1. Prerequisites
-Ollama: Make sure you have Ollama installed and the application is running.
-
-Python & Node.js: Ensure you have Python (3.9+) and Node.js (18+) installed.
-
-Pull the LLM: Open your terminal and pull the model this project uses:
-
-ollama pull llama3:8b
-
-2. Backend Setup
-Navigate to the backend directory:
-
-cd backend
-
-Create and activate a virtual environment:
-
-# For Windows
-python -m venv venv
-.\venv\Scripts\activate
-
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-Install the required Python packages:
-
-pip install "fastapi[all]" atlassian-python-api langchain langchain-community chromadb ollama beautifulsoup4 sentence-transformers
-
-Run the backend server:
-
-uvicorn main:app --reload
-
-The backend will be running at http://127.0.0.1:8000.
-
-3. Frontend Setup
-Open a new terminal and navigate to the frontend directory:
-
-cd frontend
