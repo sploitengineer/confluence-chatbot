@@ -16,6 +16,18 @@ The entire system runs **100% locally**, using **Ollama** for the Language Model
 
 ---
 
+## 📸 Screenshots
+
+Here are some screenshots of the application in action:
+
+### Login/Connection Page
+![Screenshot of the Confluence RAG Chatbot login/connection page](screenshots/login_screenshot.png)
+
+### Main Chat UI
+![Screenshot of the Confluence RAG Chatbot main user interface](screenshots/ui_screenshot.png)
+
+---
+
 
 ## 🛠️ Technology Stack
 
