@@ -57,7 +57,6 @@ async def ingest_data(credentials: ConfluenceCredentials):
             cloud=True
         )
 
-        # ROBUSTNESS FIX 1: Replace space_exists with a proper try/except block
         print(f"Verifying access to space '{credentials.space_key}'...")
         try:
             confluence.get_space(credentials.space_key)
@@ -82,7 +81,7 @@ async def ingest_data(credentials: ConfluenceCredentials):
             page_data = confluence.get_page_by_id(page['id'], expand='body.view')
             html_content = page_data['body']['view']['value']
             
-            # ROBUSTNESS FIX 2: Use BeautifulSoup for reliable HTML parsing
+            # BeautifulSoup for reliable HTML parsing
             soup = BeautifulSoup(html_content, 'html.parser')
             clean_content = soup.get_text(separator=' ', strip=True)
 
