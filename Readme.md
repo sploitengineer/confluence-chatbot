@@ -10,7 +10,7 @@ The entire system runs 100% locally, using Ollama for the Language Model, ensuri
 
 📚 Source-Cited Answers: Every answer is accompanied by direct links to the Confluence pages used to generate it, ensuring trust and verifiability.
 
-🎨 Modern UI: A clean, Gemini-inspired user interface built with React and Tailwind CSS, featuring a dark mode toggle.
+🎨 Modern UI: A clean, User interface built with React and Tailwind CSS, featuring a dark mode toggle.
 
 🚀 Robust Backend: A resilient FastAPI backend handles data ingestion, document parsing, and the entire RAG pipeline.
 
