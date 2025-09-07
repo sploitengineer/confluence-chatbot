@@ -38,6 +38,58 @@ Follow these steps to get the project running on your local machine.
   ```bash
   ollama pull llama3:8b
 
+### 2. Backend Setup
+1.  **Navigate to the backend directory**:
+    ```bash
+    cd backend
+    ```
+2.  **Create and activate a virtual environment**:
+    ```bash
+    # For Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+
+    # For macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+3.  **Install the required Python packages**:
+    ```bash
+    pip install "fastapi[all]" atlassian-python-api langchain langchain-community chromadb ollama beautifulsoup4 sentence-transformers
+    ```
+4.  **Run the backend server**:
+    ```bash
+    uvicorn main:app --reload
+    ```
+    The backend will be running at `http://127.0.0.1:8000`.
+
+### 3. Frontend Setup
+1.  **Open a new terminal** and navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
+2.  **Install the required npm packages**:
+    ```bash
+    npm install
+    ```
+3.  **Run the frontend development server**:
+    ```bash
+    npm run dev
+    ```
+    The frontend will be accessible in your browser, usually at `http://localhost:5173`.
+
+---
+
+## 💬 How to Use
+1.  **Open the App**: With both servers running, open your browser to the frontend URL.
+2.  **Connect to Confluence**: You will be greeted by a connection modal. Fill in the following fields:
+    - **Confluence URL**: Your base URL (e.g., `your-company.atlassian.net`).
+    - **Your Atlassian Email**: The email associated with your Confluence account.
+    - **API Token**: A [Confluence API token](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) for your account.
+    - **Space Key**: The short identifier for the Confluence space you want to chat with (e.g., `TPD`).
+3.  **Ingest Data**: Click **Connect & Ingest**. The backend will fetch, process, and index the documents from your specified space. You will see a success message in the chat when it's ready.
+4.  **Start Chatting**: Ask any question related to the documentation in your Confluence space!
+
 ---
 
 ## ⚙️ Architecture & Data Flow
