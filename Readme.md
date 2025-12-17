@@ -1,6 +1,6 @@
 # 🧠 Confluence RAG Chatbot
 
-This project is a powerful, self-hosted Retrieval-Augmented Generation (RAG) chatbot that connects to your personal or company's Confluence space. It allows you to ask questions in a natural, conversational way and receive answers based exclusively on the content of your documentation, complete with source links back to the original pages.
+This project is self-hosted Retrieval-Augmented Generation (RAG) chatbot that connects to your personal or company's Confluence space. It allows you to ask questions in a natural, conversational way and receive answers based exclusively on the content of your documentation, complete with source links back to the original pages.
 
 The entire system runs **100% locally**, using **Ollama** for the Language Model, ensuring your data and queries remain completely private.
 
